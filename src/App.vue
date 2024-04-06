@@ -7,10 +7,7 @@
           <form @submit.prevent="submit">
             <div class="mb-2">
               <div class="input-group">
-                <input type="text" class="form-control" readonly />
-                <button class="btn btn-outline-secondary" type="button">
-                  Button
-                </button>
+                <EmojiInput />
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -22,12 +19,17 @@
 </template>
 
 <script>
+import EmojiInput from "./components/EmojiInput.vue";
+
 export default {
   name: "App",
   data() {
     return {
       emoji: "",
     };
+  },
+  components: {
+    EmojiInput,
   },
   methods: {
     submit() {
